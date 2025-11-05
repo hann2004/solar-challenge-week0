@@ -1,0 +1,29 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Conda environments
+.env/
+env/
+*.env/
+.venv/
+
+# Data files
+data/
+*.csv
+*.xlsx
+*.ipynb_checkpoints/
+
+# VSCode settings
+.vscode/
+
+# Logs
+*.log
+
+# Mac / Linux hidden files
+.DS_Store
