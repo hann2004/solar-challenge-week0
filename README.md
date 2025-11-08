@@ -89,13 +89,15 @@ README.md
 - Wind Speed vs GHI  
 - Relative Humidity vs Ambient Temperature  
 
-![Scatter Plot Example](images/scatter_plot.png)  
+<img width="870" height="556" alt="image" src="https://github.com/user-attachments/assets/552f6291-5f48-44b6-bbca-07554fad6562" />
+
 
 ### 4. Distribution & Wind Analysis
 - Histograms for GHI, temperature, wind speed  
 - Wind roses to visualize wind patterns  
 
-![Wind Rose](images/wind_rose.png)  
+<img width="713" height="719" alt="image" src="https://github.com/user-attachments/assets/9e769308-1dcb-4af9-837d-eee019d7c3d7" />
+ 
 
 ---
 
@@ -118,7 +120,7 @@ README.md
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ```bash
 conda create -n solar-week0 python=3.10
@@ -126,11 +128,12 @@ conda activate solar-week0
 pip install -r requirements.txt
 jupyter notebook
 
+---
 Open the notebooks to explore plots and analysis.
 
 Cleaned datasets are in data/.
 
- Next Steps
+##  Next Steps
 
 Regional comparison of solar potential.
 
