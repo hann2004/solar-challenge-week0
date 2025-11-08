@@ -64,7 +64,7 @@ README.md
 
 ---
 
-## 🧹 Data Cleaning & Preprocessing
+##  Data Cleaning & Preprocessing
 
 - Handled missing values using **median imputation**.  
 - Detected and treated outliers using **IQR method**.  
@@ -72,7 +72,7 @@ README.md
 
 ---
 
-## 🔍 Exploratory Data Analysis (EDA)
+##  Exploratory Data Analysis (EDA)
 
 ### 1. Summary Statistics
 - Calculated mean, median, min, max, and standard deviation for all numeric features.
@@ -98,7 +98,7 @@ README.md
 
 ---
 
-## 💡 Key Insights
+##  Key Insights
 
 - Benin & Togo have higher GHI than Sierra Leone.  
 - Wind speed slightly reduces GHI.  
@@ -125,3 +125,14 @@ conda activate solar-week0
 pip install -r requirements.txt
 jupyter notebook
 
+Open the notebooks to explore plots and analysis.
+
+Cleaned datasets are in data/.
+
+ Next Steps
+
+Regional comparison of solar potential.
+
+Feature engineering for predictive modeling.
+
+Expand dataset with more countries for analysis.
