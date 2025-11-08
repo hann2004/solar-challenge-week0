@@ -82,7 +82,8 @@ README.md
   - **GHI ↔ Tamb:** Strong positive correlation  
   - **RH ↔ Tamb:** Negative correlation  
 
-![Correlation Heatmap](images/correlation_heatmap.png)  
+<img width="787" height="686" alt="image" src="https://github.com/user-attachments/assets/102f5e9a-81ec-44fb-9c3e-99da90dfb242" />
+ 
 
 ### 3. Scatter Plots
 - Wind Speed vs GHI  
