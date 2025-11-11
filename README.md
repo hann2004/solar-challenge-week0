@@ -133,9 +133,8 @@ The dataset contains solar radiation measurement data with the following key met
 
 ## 🎮 Streamlit Dashboard
 
-**Live Dashboard URL:** 
-solar-challenge-week0-fzxtcyggujzza57jd2kpyx
-.streamlit.app
+[Visit my Streamlit App](solar-challenge-week0-fzxtcyggujzza57jd2kpyx
+.streamlit.app)
 
 ### Features:
 - **Interactive Country Selection**: Compare any combination of countries
