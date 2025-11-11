@@ -27,7 +27,6 @@ This project performs comprehensive analysis of solar farm data from **Benin, Si
 
 ---
 
-Sure — here’s a clean, copy-paste-ready version you can put directly in your **README.md** on GitHub:
 
 ---
 
@@ -69,7 +68,6 @@ solar-challenge-week0/
 
 ---
 
-Would you like me to add a short description *below* it (e.g., “Each directory plays a specific role in maintaining modularity and clarity…”)? It makes README files look more polished and professional.
 
 ## 📊 Dataset Overview
 
@@ -136,6 +134,8 @@ The dataset contains solar radiation measurement data with the following key met
 ## 🎮 Streamlit Dashboard
 
 **Live Dashboard URL:** 
+solar-challenge-week0-fzxtcyggujzza57jd2kpyx
+.streamlit.app
 
 ### Features:
 - **Interactive Country Selection**: Compare any combination of countries
