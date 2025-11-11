@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
 import os
+import tempfile
 
-# Add src to path to import our modules
+
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from visualization.plotter import SolarDataVisualizer
@@ -18,7 +19,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
+# Custom CSS
 st.markdown("""
 <style>
     .main-header {
@@ -38,49 +39,76 @@ st.markdown("""
 
 # Header
 st.markdown('<h1 class="main-header">☀️ Solar Farm Analysis Dashboard</h1>', unsafe_allow_html=True)
-st.markdown("Compare solar potential across Benin, SierraLeone, and Togo")
+st.markdown("Compare solar potential across Benin, Sierra Leone, and Togo")
 
-# Sidebar for controls
-st.sidebar.title("Dashboard Controls")
-st.sidebar.markdown("Customize the analysis below:")
+# File upload section
+st.sidebar.title("📁 Data Upload")
+st.sidebar.markdown("Upload your cleaned CSV files:")
 
-# Country selection
-selected_countries = st.sidebar.multiselect(
-    "Select Countries:",
-    ["Benin", "SierraLeone", "Togo"],
-    default=["Benin", "SierraLeone", "Togo"]
-)
+uploaded_files = {}
+countries = ['Benin', 'Sierra Leone', 'Togo']
 
-# Metric selection
-selected_metric = st.sidebar.selectbox(
-    "Select Solar Metric:",
-    ["GHI", "DNI", "DHI", "Tamb", "WS"]
-)
+for country in countries:
+    uploaded_file = st.sidebar.file_uploader(
+        f"{country} data", 
+        type=['csv'],
+        key=f"upload_{country}"
+    )
+    if uploaded_file is not None:
+        uploaded_files[country] = uploaded_file
 
 # Load data function
 @st.cache_data
-def load_country_data(country_name):
-    """Load cleaned data for a country with caching for performance"""
+def load_uploaded_data(uploaded_file):
+    """Load data from uploaded file"""
     try:
-        file_path = f"data/{country_name.lower().replace(' ', '_')}_clean.csv"
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(uploaded_file)
         return df
     except Exception as e:
-        st.error(f"Error loading data for {country_name}: {e}")
+        st.error(f"Error reading file: {e}")
         return None
 
 def main():
+    if not uploaded_files:
+        st.warning("👆 Please upload cleaned CSV files for analysis using the file uploaders in the sidebar.")
+        st.info("""
+        **Required files:**
+        - Benin: `benin_clean.csv`
+        - Sierra Leone: `sierra_leone_clean.csv`
+        - Togo: `togo_clean.csv`
+        
+        These are the cleaned files you created in Task 2.
+        """)
+        return
+
     # Load data for selected countries
     country_data = {}
-    for country in selected_countries:
-        df = load_country_data(country)
+    for country, uploaded_file in uploaded_files.items():
+        df = load_uploaded_data(uploaded_file)
         if df is not None:
             country_data[country] = df
-    
+            st.sidebar.success(f"✅ {country} data loaded")
+
     if not country_data:
-        st.error("No data loaded. Please check if cleaned CSV files exist in the data/ directory.")
+        st.error("No valid data loaded. Please check your CSV files.")
         return
+
+    # Rest of your dashboard code continues here...
+    # [Keep all your existing visualization code from the previous version]
     
+    # Country selection
+    selected_countries = st.sidebar.multiselect(
+        "Select Countries to Compare:",
+        list(country_data.keys()),
+        default=list(country_data.keys())
+    )
+
+    # Metric selection
+    selected_metric = st.sidebar.selectbox(
+        "Select Solar Metric:",
+        ["GHI", "DNI", "DHI", "Tamb", "WS"]
+    )
+
     # Create two columns for layout
     col1, col2 = st.columns([2, 1])
     
@@ -92,9 +120,9 @@ def main():
         data_to_plot = []
         valid_countries = []
         
-        for country, df in country_data.items():
-            if selected_metric in df.columns:
-                data_to_plot.append(df[selected_metric].dropna())
+        for country in selected_countries:
+            if country in country_data and selected_metric in country_data[country].columns:
+                data_to_plot.append(country_data[country][selected_metric].dropna())
                 valid_countries.append(country)
         
         if data_to_plot:
@@ -120,9 +148,9 @@ def main():
         st.subheader("Key Metrics")
         
         # Calculate and display key statistics
-        for country, df in country_data.items():
-            if selected_metric in df.columns:
-                metric_data = df[selected_metric].dropna()
+        for country in selected_countries:
+            if country in country_data and selected_metric in country_data[country].columns:
+                metric_data = country_data[country][selected_metric].dropna()
                 
                 st.markdown(f'<div class="metric-card">', unsafe_allow_html=True)
                 st.markdown(f"**{country}**")
@@ -133,41 +161,9 @@ def main():
                 )
                 st.markdown(f'</div>', unsafe_allow_html=True)
                 st.write("")  # Add some space
-    
-    # Summary table
-    st.subheader("Country Comparison Summary")
-    
-    summary_data = []
-    for country, df in country_data.items():
-        country_stats = {'Country': country}
-        
-        key_metrics = ['GHI', 'DNI', 'DHI', 'Tamb', 'WS']
-        for metric in key_metrics:
-            if metric in df.columns:
-                country_stats[f'{metric}_mean'] = df[metric].mean()
-                country_stats[f'{metric}_median'] = df[metric].median()
-        
-        summary_data.append(country_stats)
-    
-    if summary_data:
-        summary_df = pd.DataFrame(summary_data)
-        st.dataframe(summary_df, use_container_width=True)
-    
-    # Recommendations section
-    st.subheader("🌍 Strategic Recommendations")
-    
-    if 'GHI' in summary_df.columns:
-        # Find country with highest GHI
-        best_country = summary_df.loc[summary_df['GHI_mean'].idxmax(), 'Country']
-        st.success(f"**Primary Investment Recommendation**: {best_country} shows the highest average GHI, making it the most promising location for solar farm development.")
-    
-    st.info("""
-    **Considerations for Site Selection:**
-    - Higher GHI values indicate better overall solar potential
-    - Lower standard deviation means more predictable energy generation
-    - Consider local infrastructure, regulations, and costs
-    - Environmental factors and community impact
-    """)
+
+    # Summary table and recommendations...
+    # [Include the rest of your existing dashboard code]
 
 if __name__ == "__main__":
     main()
