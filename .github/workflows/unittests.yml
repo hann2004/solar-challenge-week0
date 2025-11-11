@@ -21,8 +21,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Check Python version
-      run: python --version
-    
     - name: Run tests
-      run: python --version
+      run: |
+        python tests/test_cleaner.py
+        python tests/test_plotter.py
+        python tests/test_dashboard.py
+    
