@@ -30,8 +30,12 @@ This project performs comprehensive analysis of solar farm data from **Benin, Si
 
 
 
+Here's the clean, properly formatted project structure:
+
+```markdown
 ## 🏗️ Project Structure
 
+```
 solar-challenge-week0/
 ├── app/                           # Streamlit dashboard
 │   ├── main.py                    # Main dashboard application
@@ -57,6 +61,8 @@ solar-challenge-week0/
 └── README.md                      # Project documentation
 ```
 ```
+
+Just copy and paste this section to replace the project structure part in your README. The backticks (```) will make it display as a clean code block with proper alignment.
 
 ## 📊 Dataset Overview
 
