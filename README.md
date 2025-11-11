@@ -1,4 +1,3 @@
-```markdown
 # Solar Challenge Week 0
 ![CI](https://github.com/hann2004/solar-challenge-week0/actions/workflows/unittests.yml/badge.svg)
 
@@ -15,7 +14,7 @@
 
 ---
 
-## 📋 Project Overview
+##  Project Overview
 
 This project performs comprehensive analysis of solar farm data from **Benin, Sierra Leone, and Togo** to identify high-potential regions for solar investments. The analysis supports MoonLight Energy Solutions in developing strategic approaches for operational efficiency and sustainability.
 
@@ -30,7 +29,6 @@ This project performs comprehensive analysis of solar farm data from **Benin, Si
 
 ##  Project Structure
 
-```
 solar-challenge-week0/
 ├── app/                 # Streamlit dashboard
 │   ├── main.py         # Main dashboard application
@@ -54,11 +52,11 @@ solar-challenge-week0/
 ├── dashboard_screenshots/ # Dashboard screenshots
 ├── requirements.txt    # Python dependencies
 └── README.md          # Project documentation
-```
+
 
 ---
 
-## Dataset Overview
+## 📊 Dataset Overview
 
 The dataset contains solar radiation measurement data with the following key metrics:
 
@@ -81,7 +79,7 @@ The dataset contains solar radiation measurement data with the following key met
 
 ---
 
-##  Data Processing Pipeline
+## 🔧 Data Processing Pipeline
 
 ### 1. Data Cleaning & Preprocessing
 - **Missing Values**: Handled using median imputation for numeric columns
@@ -101,7 +99,7 @@ The dataset contains solar radiation measurement data with the following key met
 
 ---
 
-## Key Insights & Findings
+## 📈 Key Insights & Findings
 
 ### Solar Potential Ranking:
 1. **Togo** - Highest average GHI (250+ W/m²) and most consistent performance
@@ -120,11 +118,9 @@ The dataset contains solar radiation measurement data with the following key met
 
 ---
 
-##  Streamlit Dashboard
+## 🎮 Streamlit Dashboard
 
-**Live Dashboard URL:** 
-solar-challenge-week0-fzxtcyggujzza57jd2kpyx
-.streamlit.app
+**Live Dashboard URL:** [Your Streamlit App Link Here]
 
 ### Features:
 - **Interactive Country Selection**: Compare any combination of countries
@@ -138,7 +134,6 @@ solar-challenge-week0-fzxtcyggujzza57jd2kpyx
 streamlit run app/main.py
 ```
 
----
 
 ##  Quick Start
 
