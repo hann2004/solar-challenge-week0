@@ -38,20 +38,20 @@ solar-challenge-week0/
 │ ├── sierra_leone_clean.csv
 │ └── togo_clean.csv
 ├── notebooks/ # Jupyter notebooks for analysis
-│ ├── benin_eda.ipynb # EDA for Benin
-│ ├── sierra_leone_eda.ipynb # EDA for Sierra Leone
-│ ├── togo_eda.ipynb # EDA for Togo
-│ └── compare_countries.ipynb # Cross-country comparison
+│ ├── benin_eda.ipynb     # EDA for Benin
+│ ├── sierra_leone_eda.ipynb    # EDA for Sierra Leone
+│ ├── togo_eda.ipynb      # EDA for Togo
+│ └── compare_countries.ipynb    # Cross-country comparison
 ├── src/ # Modular Python scripts
 │ ├── data_processing/
-│ │ └── cleaner.py # Data cleaning utilities
+│ │ └── cleaner.py     # Data cleaning utilities
 │ └── visualization/
-│ └── plotter.py # Visualization utilities
-├── tests/ # Test files
-├── scripts/ # Utility scripts
-├── dashboard_screenshots/ # Dashboard screenshots
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
+│ └── plotter.py     # Visualization utilities
+├── tests/     # Test files
+├── scripts/    # Utility scripts
+├── dashboard_screenshots/    # Dashboard screenshots
+├── requirements.txt     # Python dependencies
+└── README.md     # Project documentation
 
 ## 📊 Dataset Overview
 
