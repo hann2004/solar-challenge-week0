@@ -29,26 +29,29 @@ This project performs comprehensive analysis of solar farm data from **Benin, Si
 
 ##  Project Structure
 
-- **app/** - Streamlit dashboard
-  - main.py - Main dashboard application
-  - utils.py - Utility functions
-- **data/** - Data files (cleaned datasets)
-  - benin_clean.csv
-  - sierra_leone_clean.csv
-  - togo_clean.csv
-- **notebooks/** - Jupyter notebooks for analysis
-  - benin_eda.ipynb - EDA for Benin
-  - sierra_leone_eda.ipynb - EDA for Sierra Leone
-  - togo_eda.ipynb - EDA for Togo
-  - compare_countries.ipynb - Cross-country comparison
-- **src/** - Modular Python scripts
-  - data_processing/cleaner.py - Data cleaning utilities
-  - visualization/plotter.py - Visualization utilities
-- **tests/** - Test files
-- **scripts/** - Utility scripts
-- **dashboard_screenshots/** - Dashboard screenshots
-- **requirements.txt** - Python dependencies
-- **README.md** - Project documentation
+solar-challenge-week0/
+├── app/ # Streamlit dashboard
+│ ├── main.py # Main dashboard application
+│ └── utils.py # Utility functions
+├── data/ # Data files (cleaned datasets)
+│ ├── benin_clean.csv
+│ ├── sierra_leone_clean.csv
+│ └── togo_clean.csv
+├── notebooks/ # Jupyter notebooks for analysis
+│ ├── benin_eda.ipynb # EDA for Benin
+│ ├── sierra_leone_eda.ipynb # EDA for Sierra Leone
+│ ├── togo_eda.ipynb # EDA for Togo
+│ └── compare_countries.ipynb # Cross-country comparison
+├── src/ # Modular Python scripts
+│ ├── data_processing/
+│ │ └── cleaner.py # Data cleaning utilities
+│ └── visualization/
+│ └── plotter.py # Visualization utilities
+├── tests/ # Test files
+├── scripts/ # Utility scripts
+├── dashboard_screenshots/ # Dashboard screenshots
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
 
 ## 📊 Dataset Overview
 
