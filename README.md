@@ -27,8 +27,13 @@ This project performs comprehensive analysis of solar farm data from **Benin, Si
 
 ---
 
-##  Project Structure
+Sure — here’s a clean, copy-paste-ready version you can put directly in your **README.md** on GitHub:
 
+---
+
+## 🗂️ Project Structure
+
+```bash
 solar-challenge-week0/
 ├── app/                          # Streamlit dashboard
 │   ├── main.py                   # Main dashboard application
@@ -60,7 +65,11 @@ solar-challenge-week0/
 ├── requirements.txt              # Python dependencies
 │
 └── README.md                     # Project documentation
+```
 
+---
+
+Would you like me to add a short description *below* it (e.g., “Each directory plays a specific role in maintaining modularity and clarity…”)? It makes README files look more polished and professional.
 
 ## 📊 Dataset Overview
 
@@ -126,7 +135,7 @@ The dataset contains solar radiation measurement data with the following key met
 
 ## 🎮 Streamlit Dashboard
 
-**Live Dashboard URL:** [Your Streamlit App Link Here]
+**Live Dashboard URL:** 
 
 ### Features:
 - **Interactive Country Selection**: Compare any combination of countries
